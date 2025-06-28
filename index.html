@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Phone number validator</title>
+  </head>
+  <body>
+    <h1>US Phone Number Validator</h1>
+    <div class="container">
+      <div class="handle">
+        <div class="speaker"></div>
+        <div class="main-handle"></div>
+        <div class="microphone"></div>
+      </div>
+      <div class="base">
+        <div class="main-body">
+          <input id="user-input" type="text" required />
+        </div>
+        <div class="support left"></div>
+        <div class="support right"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="button" id="check-btn">Check</button>
+      <button type="button" id="clear-btn">Clear</button>
+    </div>
+    <div class="results container hidden">
+      <p id="results-div"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
