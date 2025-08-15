@@ -3,8 +3,11 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const result = document.getElementById("results-div");
 
+
+//* CHECK USER INPUT FOR NEEDED FORMAT
+
 const checkSequence = (value) => {
-  const validFormat = /^[1]?[\s]?([(])?[0-9]{3}([)])?[-|\s]?[0-9]{3}[-|\s]?[0-9]{4}$/;
+  const validFormat = /^[1\s]?([(])?[0-9]{3}([)])?[-|\s]?[0-9]{3}[-|\s]?[0-9]{4}$/;
   
   const isValid = value.match(validFormat);
 
@@ -12,14 +15,15 @@ const checkSequence = (value) => {
 }
 
 const parenthesesChecker = (str) => {
-  if (str[1] === "(" && str[2] === ")") {
-    return true;
-  } else if ( str[1] === undefined && str[2] === undefined ) {
+  if ((str[1] === "(" && str[2] === ")") ||
+     (str[1] === undefined && str[2] === undefined)){
     return true;
   } else {
     return false;
   }
 }
+
+//* CLEAR && HIDE OUTPUT
 
 const reset = () => {
   userInput.value = "";
@@ -28,9 +32,14 @@ const reset = () => {
 
 }
 
+
+//* MAIN FUNCTION
+
 const validator = () => {
   const userInputValue = userInput.value;
   const onlySpacesInput = userInputValue.replace(/\s/, "");
+  
+  // ONLY SPACES USER INPUT
   if (onlySpacesInput === "") {
     alert("Please provide a phone number");
     return;
