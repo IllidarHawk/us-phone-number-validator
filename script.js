@@ -37,9 +37,9 @@ const validator = () => {
   }
 
   if (checkSequence(userInputValue)) {
-    result.textContent = "Valid US number: " + userInputValue;
+    result.textContent = "Valid US number";
   } else {
-    result.textContent = "Invalid US number: " + userInputValue;
+    result.textContent = "Invalid US number";
   }
   
   result.parentElement.classList.remove("hidden");
